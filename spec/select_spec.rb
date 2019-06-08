@@ -34,7 +34,7 @@ describe 'querying the bears table' do
   end
 
   it 'counts the number of bears with goofy temperaments' do
-    expect(@db.execute("")).to eq([[1]])
+    expect(@db.execute("select count (temperament) from bears where temperament = 'goofy';")).to eq([[1]])
   end
 
   it 'selects the bear that killed Tim' do
