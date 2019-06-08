@@ -22,7 +22,7 @@ describe 'querying the bears table' do
   end
 
   it 'selects the oldest bear and returns their name and age' do
-    expect(@db.execute("")).to eq([["Mr. Chocolate", 20]])
+    expect(@db.execute("select name, max (age) from bears;")).to eq([["Mr. Chocolate", 20]])
   end
 
   it 'selects the youngest bear and returns their name and age' do
