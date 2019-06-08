@@ -26,7 +26,7 @@ describe 'querying the bears table' do
   end
 
   it 'selects the youngest bear and returns their name and age' do
-    expect(@db.execute("")).to eq([["Grinch", 2]])
+    expect(@db.execute("select name, min (age) from bears;")).to eq([["Grinch", 2]])
   end
 
   it 'selects the most prominent color and returns it with its count' do
@@ -38,6 +38,6 @@ describe 'querying the bears table' do
   end
 
   it 'selects the bear that killed Tim' do
-    expect(@db.execute(selects_bear_that_killed_Tim)).to eq([[8, nil, 20, "M", "black", "aggressive", 0]])
+    expect(@db.execute("")).to eq([[8, nil, 20, "M", "black", "aggressive", 0]])
   end
 end
