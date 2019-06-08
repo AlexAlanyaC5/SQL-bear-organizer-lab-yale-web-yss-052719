@@ -30,7 +30,7 @@ describe 'querying the bears table' do
   end
 
   it 'selects the most prominent color and returns it with its count' do
-    expect(@db.execute("")).to eq([["dark brown", 3]])
+    expect(@db.execute("select color, count (*) from bears group by color order by count (*) desc limit 1;")).to eq([["dark brown", 3]])
   end
 
   it 'counts the number of bears with goofy temperaments' do
