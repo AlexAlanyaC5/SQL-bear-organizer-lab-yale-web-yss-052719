@@ -6,8 +6,8 @@ describe 'populating the bears table' do
     @sql_runner.execute_insert_file
   end
 
-  it 'has 100 bears' do
-    expect(@db.execute("SELECT COUNT(*) FROM bears;").flatten[0]).to eq(8)
+  it 'has 8 bears' do
+    expect(@db.execute("SELECT COUNT(*) FROM bears;").flatten[0]).to eq(100)
   end
   
   it 'has an unnamed bear' do
