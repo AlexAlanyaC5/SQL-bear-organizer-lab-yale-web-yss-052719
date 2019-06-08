@@ -10,7 +10,7 @@ describe 'querying the bears table' do
   end
 
   it 'selects all of the female bears and returns their name and age' do
-    expect(@db.execute("select name, age from bears where gender='F'";)).to eq([["Tabitha", 6],["Melissa", 13], ["Wendy", 6]])
+    expect(@db.execute("select name, age from bears where gender='F';")).to eq([["Tabitha", 6],["Melissa", 13], ["Wendy", 6]])
   end
 
   it 'selects all of the bears names and orders them in alphabetical order' do
